@@ -11,5 +11,10 @@ namespace Brighid.Identity.Resources.Application
         /// Gets or sets the application's ID in string form.
         /// </summary>
         public string Id { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Gets or sets the application's encrypted client secret.
+        /// </summary>
+        public string EncryptedSecret { get; set; } = string.Empty;
     }
 }
