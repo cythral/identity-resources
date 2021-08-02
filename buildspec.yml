@@ -36,8 +36,8 @@ phases:
 artifacts:
   discard-paths: yes
   files:
-    - "bin/brighid-commands-resources.template.yml"
-    - "brighid-commands-resources.*.config.json"
+    - "bin/identity-resources.template.yml"
+    - "identity-resources.*.config.json"
 
 reports:
   test-results:

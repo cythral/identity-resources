@@ -15,14 +15,18 @@ namespace Brighid.Identity.Resources.Application
     [CustomResourceProvider(typeof(Startup))]
     public partial class Handler
     {
+        private readonly IApplicationsClient applicationsClient;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Handler" /> class.
         /// </summary>
-        public Handler()
+        /// <param name="applicationsClient">Client used to manage applications with.</param>
+        public Handler(
+            IApplicationsClient applicationsClient
+        )
         {
+            this.applicationsClient = applicationsClient;
         }
-
-#pragma warning disable IDE0060
 
         /// <summary>
         /// Creates a new application.
@@ -32,8 +36,12 @@ namespace Brighid.Identity.Resources.Application
         /// <returns>The resulting command data.</returns>
         public async Task<OutputData> Create(CustomResourceRequest<ApplicationRequest> request, CancellationToken cancellationToken = default)
         {
-            await Task.CompletedTask;
-            throw new NotImplementedException();
+            var result = await applicationsClient.Post(request.ResourceProperties, cancellationToken);
+            return new OutputData
+            {
+                Id = result.Id.ToString(),
+                EncryptedSecret = result.EncryptedSecret,
+            };
         }
 
         /// <summary>
@@ -44,8 +52,12 @@ namespace Brighid.Identity.Resources.Application
         /// <returns>The resulting command data.</returns>
         public async Task<OutputData> Update(CustomResourceRequest<ApplicationRequest> request, CancellationToken cancellationToken = default)
         {
-            await Task.CompletedTask;
-            throw new NotImplementedException();
+            var result = await applicationsClient.Put(Guid.Parse(request.PhysicalResourceId), request.ResourceProperties, cancellationToken);
+            return new OutputData
+            {
+                Id = result.Id.ToString(),
+                EncryptedSecret = result.EncryptedSecret,
+            };
         }
 
         /// <summary>
@@ -56,8 +68,12 @@ namespace Brighid.Identity.Resources.Application
         /// <returns>The resulting command data.</returns>
         public async Task<OutputData> Delete(CustomResourceRequest<ApplicationRequest> request, CancellationToken cancellationToken = default)
         {
-            await Task.CompletedTask;
-            throw new NotImplementedException();
+            var result = await applicationsClient.Delete(Guid.Parse(request.PhysicalResourceId), cancellationToken);
+            return new OutputData
+            {
+                Id = result.Id.ToString(),
+                EncryptedSecret = result.EncryptedSecret,
+            };
         }
     }
 }

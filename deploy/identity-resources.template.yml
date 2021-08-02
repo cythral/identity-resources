@@ -1,3 +1,4 @@
+Description: Custom Resources for Brighid Identity.
 Transform: AWS::Serverless-2016-10-31
 Parameters:
   LambdajectionLayerVersion:
@@ -21,10 +22,10 @@ Parameters:
     Description: Encrypted Client Secret of the Discord Application.
 
 Resources:
-  CommandsCustomResourcesSecurityGroup:
+  IdentityCustomResourcesSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupDescription: Security Group for Brighid Commands Custom Resources
+      GroupDescription: Security Group for Brighid Identity Custom Resources
       VpcId: !ImportValue cfn-utilities:VpcId
 
   ApplicationResource:
@@ -33,7 +34,7 @@ Resources:
       Handler: Brighid.Identity.Resources.Application::Brighid.Identity.Resources.Application.Handler::Run
       Runtime: provided.al2
       Timeout: 30
-      CodeUri: ../bin/Resources.Command/Release/net5.0/linux-x64/publish/
+      CodeUri: ../bin/Resources.Application/Release/net5.0/linux-x64/publish/
       MemorySize: 512
       Policies:
         - !ImportValue cfn-utilities:SecretsKeyDecryptPolicyArn
@@ -42,10 +43,17 @@ Resources:
         - !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:layer:lambdajection:${LambdajectionLayerVersion}
       VpcConfig:
         SecurityGroupIds:
-          - !Ref CommandsCustomResourcesSecurityGroup
+          - !Ref IdentityCustomResourcesSecurityGroup
         SubnetIds: !Split [",", !ImportValue cfn-utilities:PrivateSubnetIds]
       Environment:
         Variables:
           Identity__IdentityServerUri: !Ref IdentityServerUri
           Identity__ClientId: !Ref IdentityClientId
           Identity__ClientSecret: !Ref IdentityClientSecret
+
+Outputs:
+  ApplicationResourceArn:
+    Value: !GetAtt ApplicationResource.Arn
+    Description: ARN of the Brighid Identity Application Custom Resource.
+    Export:
+      Name: !Sub ${AWS::StackName}:ApplicationResourceArn
