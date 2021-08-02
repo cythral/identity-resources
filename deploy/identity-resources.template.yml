@@ -51,6 +51,14 @@ Resources:
           Identity__ClientId: !Ref IdentityClientId
           Identity__ClientSecret: !Ref IdentityClientSecret
 
+  TestApplication:
+    Type: Custom::Application
+    Properties:
+      ServiceToken: !GetAtt ApplicationResource.Arn
+      Name: BrighidIdentityApplicationTest1
+      Roles:
+        - Basic
+
 Outputs:
   ApplicationResourceArn:
     Value: !GetAtt ApplicationResource.Arn
