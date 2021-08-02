@@ -23,6 +23,7 @@ namespace Brighid.Identity.Resources.Application
         public void ConfigureServices(IServiceCollection services)
         {
             services.ConfigureBrighidIdentity<IdentityConfig>(configuration.GetSection("Identity"));
+            services.UseBrighidIdentityApplications();
         }
     }
 }
