@@ -53,6 +53,7 @@ Resources:
 
   TestApplication:
     Type: Custom::Application
+    DeletionPolicy: Retain
     Properties:
       ServiceToken: !GetAtt ApplicationResource.Arn
       Name: BrighidIdentityApplicationTest1
