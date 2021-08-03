@@ -53,7 +53,6 @@ Resources:
 
   TestApplication:
     Type: Custom::Application
-    DeletionPolicy: Retain
     Properties:
       ServiceToken: !GetAtt ApplicationResource.Arn
       Name: BrighidIdentityApplicationTest1
@@ -66,3 +65,7 @@ Outputs:
     Description: ARN of the Brighid Identity Application Custom Resource.
     Export:
       Name: !Sub ${AWS::StackName}:ApplicationResourceArn
+
+  TestApplication:
+    Value: !GetAtt TestApplication.EncryptedSecret
+    Description: Encrypted secret of the Test Application.
