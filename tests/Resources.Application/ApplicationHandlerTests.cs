@@ -35,7 +35,7 @@ namespace Brighid.Identity.Resources
             {
                 await handler.Create(request, cancellationToken);
 
-                await applicationsClient.Received().Post(Is(request.ResourceProperties), Is(cancellationToken));
+                await applicationsClient.Received().Create(Is(request.ResourceProperties), Is(cancellationToken));
             }
 
             [Test, Auto]
@@ -83,7 +83,7 @@ namespace Brighid.Identity.Resources
 
                 await handler.Update(request, cancellationToken);
 
-                await applicationsClient.Received().Put(Is(id), Is(request.ResourceProperties), Is(cancellationToken));
+                await applicationsClient.Received().UpdateById(Is(id), Is(request.ResourceProperties), Is(cancellationToken));
             }
 
             [Test, Auto]
@@ -137,7 +137,7 @@ namespace Brighid.Identity.Resources
 
                 await handler.Delete(request, cancellationToken);
 
-                await applicationsClient.Received().Delete(Is(id), Is(cancellationToken));
+                await applicationsClient.Received().DeleteById(Is(id), Is(cancellationToken));
             }
 
             [Test, Auto]
