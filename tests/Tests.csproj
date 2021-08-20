@@ -18,5 +18,6 @@
 
     <ItemGroup>
         <ProjectReference Include="../src/Resources.Application/Resources.Application.csproj" />
+        <ProjectReference Include="../src/Resources.Role/Resources.Role.csproj" />
     </ItemGroup>
 </Project>
