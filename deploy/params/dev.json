@@ -1,6 +1,6 @@
 {
-    "DotnetLayerVersion": "3",
-    "LambdajectionLayerVersion": "10",
+    "DotnetLayerVersion": "4",
+    "LambdajectionLayerVersion": "11",
     "IdentityServerUri": "http://identity.dev.brigh.id",
     "IdentityClientId": "8ac8c1f5-005d-4282-94b4-9ff6ba7cc601",
     "IdentityClientSecret": "AQICAHjCPp/4JJqnSjdP1A4JZ+E3yC2Gqmk9GshiMiqu57jujwHkTXjy5En7f2G08lxaACKAAAABEDCCAQwGCSqGSIb3DQEHBqCB/jCB+wIBADCB9QYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAxWxQNS3fI9MVzkxogCARCAgceZHNW3ctLEBhaMNl1pCOBIGfosI3QG3FIO4JbY6cUgIHcrRcnhTYjkq+KZX5hh0edc6rnJ6MB77VGrvDxiPiIfw4NLIrBNngXLwb2JEGepL0lgt5cHPAWU6JeawRa3cbGpsO14NYbTCkOtllosmzCY0yDQ+piV4gxMMnTk0bcxIkpYRuhEvNxL56aUxK0A68D8iW6Xot1NfQ6LmfZ95HhVdsr89+gt3SqdSzaz1nr7lOEDWhxqTC0ZqMZ2JFblaP2qQlxSEUcm"

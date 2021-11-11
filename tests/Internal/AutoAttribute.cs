@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Text.Json;
 using System.Threading;
 
 using AutoFixture;
@@ -17,6 +19,7 @@ internal class AutoAttribute : AutoDataAttribute
         fixture.Inject(new CancellationToken(false));
         fixture.Customize(new AutoNSubstituteCustomization { ConfigureMembers = true });
         fixture.Customizations.Add(new OptionsRelay());
+        fixture.Customizations.Add(new TypeOmitter<KeyValuePair<string, JsonElement>>());
         fixture.Customizations.Insert(-1, new TargetRelay());
         fixture.Behaviors.Add(new OmitOnRecursionBehavior());
         return fixture;
