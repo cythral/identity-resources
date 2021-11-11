@@ -1,3 +1,5 @@
+using System.Text.Json;
+
 using Lambdajection.Core;
 
 using Microsoft.Extensions.Configuration;
@@ -24,6 +26,10 @@ namespace Brighid.Identity.Resources.Role
         {
             services.ConfigureBrighidIdentity<IdentityConfig>(configuration.GetSection("Identity"));
             services.UseBrighidIdentityRoles();
+            services.AddSingleton(new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+            });
         }
     }
 }

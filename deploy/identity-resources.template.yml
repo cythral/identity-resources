@@ -78,8 +78,8 @@ Resources:
     Type: Custom::Role
     Properties:
       ServiceToken: !GetAtt ApplicationResource.Arn
-      name: CustomExampleApplication
-      roles:
+      Name: CustomExampleApplication
+      Roles:
         - Basic
 
 Outputs:
