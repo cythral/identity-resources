@@ -74,14 +74,6 @@ Resources:
           Identity__ClientId: !Ref IdentityClientId
           Identity__ClientSecret: !Ref IdentityClientSecret
 
-  TestApplication:
-    Type: Custom::Role
-    Properties:
-      ServiceToken: !GetAtt ApplicationResource.Arn
-      Name: CustomExampleApplication
-      Roles:
-        - Basic
-
 Outputs:
   ApplicationResourceArn:
     Value: !GetAtt ApplicationResource.Arn
