@@ -1,13 +1,13 @@
 Description: Custom Resources for Brighid Identity.
 Transform: AWS::Serverless-2016-10-31
 Parameters:
-  LambdajectionLayerVersion:
+  LambdajectionVersion:
     Type: String
-    Description: ARN of the Lambda Layer containing Lambdajection + its dependencies.
+    Description: Version of Lambdajection to use.
 
-  DotnetLayerVersion:
+  DotnetVersion:
     Type: String
-    Description: ARN of the Lambda Layer containing .NET.
+    Description: Version of .NET to use.
 
   IdentityServerUri:
     Type: String
@@ -39,8 +39,8 @@ Resources:
       Policies:
         - !ImportValue cfn-utilities:SecretsKeyDecryptPolicyArn
       Layers:
-        - !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:layer:dotnet:${DotnetLayerVersion}
-        - !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:layer:lambdajection:${LambdajectionLayerVersion}
+        - !Sub "{{resolve:ssm:/dotnet/${DotnetVersion}/layer-arn}}"
+        - !Sub "{{resolve:ssm:/lambdajection/${LambdajectionVersion}/layer-arn}}"
       VpcConfig:
         SecurityGroupIds:
           - !Ref IdentityCustomResourcesSecurityGroup
@@ -62,8 +62,8 @@ Resources:
       Policies:
         - !ImportValue cfn-utilities:SecretsKeyDecryptPolicyArn
       Layers:
-        - !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:layer:dotnet:${DotnetLayerVersion}
-        - !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:layer:lambdajection:${LambdajectionLayerVersion}
+        - !Sub "{{resolve:ssm:/dotnet/${DotnetVersion}/layer-arn}}"
+        - !Sub "{{resolve:ssm:/lambdajection/${LambdajectionVersion}/layer-arn}}"
       VpcConfig:
         SecurityGroupIds:
           - !Ref IdentityCustomResourcesSecurityGroup
