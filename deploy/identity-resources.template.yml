@@ -75,7 +75,7 @@ Resources:
           Identity__ClientSecret: !Ref IdentityClientSecret
 
   TestRole:
-    Type: Custom::Brighid::Role
+    Type: Custom::BrighidRole
     Properties:
       ServiceToken: !GetAtt RoleResource.Arn
       Name: ThisIsATestRole
