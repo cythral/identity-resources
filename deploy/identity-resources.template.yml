@@ -78,7 +78,7 @@ Resources:
     Type: Custom::BrighidRole
     Properties:
       ServiceToken: !GetAtt RoleResource.Arn
-      Name: ThisIsATestRole
+      Name: YetAnotherTestRole
 
 Outputs:
   ApplicationResourceArn:
