@@ -1,4 +1,5 @@
 using System;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -6,6 +7,8 @@ using Brighid.Identity.Client;
 
 using Lambdajection.Attributes;
 using Lambdajection.CustomResource;
+
+using Microsoft.Extensions.Logging;
 
 namespace Brighid.Identity.Resources.Role
 {
@@ -16,16 +19,20 @@ namespace Brighid.Identity.Resources.Role
     public partial class Handler
     {
         private readonly IRolesClient rolesClient;
+        private readonly ILogger<Handler> logger;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Handler" /> class.
         /// </summary>
         /// <param name="rolesClient">Client used to manage applications with.</param>
+        /// <param name="logger">Logger used to log info to some destination(s).</param>
         public Handler(
-            IRolesClient rolesClient
+            IRolesClient rolesClient,
+            ILogger<Handler> logger
         )
         {
             this.rolesClient = rolesClient;
+            this.logger = logger;
         }
 
         /// <summary>
@@ -36,7 +43,10 @@ namespace Brighid.Identity.Resources.Role
         /// <returns>The resulting command data.</returns>
         public async Task<OutputData> Create(CustomResourceRequest<RoleRequest> request, CancellationToken cancellationToken = default)
         {
+            logger.LogInformation("Received create role request: {@request}", JsonSerializer.Serialize(request));
             var result = await rolesClient.Post(request.ResourceProperties, cancellationToken);
+            logger.LogInformation("Received create role response: {@response}", JsonSerializer.Serialize(result));
+
             return new OutputData
             {
                 Id = result.Id.ToString(),
@@ -51,7 +61,10 @@ namespace Brighid.Identity.Resources.Role
         /// <returns>The resulting command data.</returns>
         public async Task<OutputData> Update(CustomResourceRequest<RoleRequest> request, CancellationToken cancellationToken = default)
         {
+            logger.LogInformation("Received update role request: {@request}", JsonSerializer.Serialize(request));
             var result = await rolesClient.Put(Guid.Parse(request.PhysicalResourceId), request.ResourceProperties, cancellationToken);
+            logger.LogInformation("Received update role response: {@response}", JsonSerializer.Serialize(result));
+
             return new OutputData
             {
                 Id = result.Id.ToString(),
@@ -66,7 +79,10 @@ namespace Brighid.Identity.Resources.Role
         /// <returns>The resulting command data.</returns>
         public async Task<OutputData> Delete(CustomResourceRequest<RoleRequest> request, CancellationToken cancellationToken = default)
         {
+            logger.LogInformation("Received delete role request: {@request}", JsonSerializer.Serialize(request));
             var result = await rolesClient.Delete(Guid.Parse(request.PhysicalResourceId), cancellationToken);
+            logger.LogInformation("Received delete role response: {@response}", JsonSerializer.Serialize(result));
+
             return new OutputData
             {
                 Id = result.Id.ToString(),
