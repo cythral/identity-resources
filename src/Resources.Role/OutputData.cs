@@ -8,8 +8,13 @@ namespace Brighid.Identity.Resources.Role
     public class OutputData : ICustomResourceOutputData
     {
         /// <summary>
-        /// Gets or sets the application's ID in string form.
+        /// Gets or sets the role's ID in string form.
         /// </summary>
         public string Id { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Gets or sets the role's name.
+        /// </summary>
+        public string Name { get; set; } = string.Empty;
     }
 }

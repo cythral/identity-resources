@@ -51,6 +51,23 @@ namespace Brighid.Identity.Resources
 
                 result.Id.Should().Be(role.Id.ToString());
             }
+
+            [Test, Auto]
+            public async Task ShouldReturnTheName(
+                Guid id,
+                CustomResourceRequest<RoleRequest> request,
+                [Frozen] Client.Role role,
+                [Frozen, Substitute] IRolesClient rolesClient,
+                [Target] Handler handler,
+                CancellationToken cancellationToken
+            )
+            {
+                request.PhysicalResourceId = id.ToString();
+
+                var result = await handler.Create(request, cancellationToken);
+
+                result.Name.Should().Be(role.Name);
+            }
         }
 
         [TestFixture]
@@ -88,6 +105,23 @@ namespace Brighid.Identity.Resources
 
                 result.Id.Should().Be(role.Id.ToString());
             }
+
+            [Test, Auto]
+            public async Task ShouldReturnTheName(
+                Guid id,
+                CustomResourceRequest<RoleRequest> request,
+                [Frozen] Client.Role role,
+                [Frozen, Substitute] IRolesClient rolesClient,
+                [Target] Handler handler,
+                CancellationToken cancellationToken
+            )
+            {
+                request.PhysicalResourceId = id.ToString();
+
+                var result = await handler.Update(request, cancellationToken);
+
+                result.Name.Should().Be(role.Name);
+            }
         }
 
         [TestFixture]
@@ -124,6 +158,23 @@ namespace Brighid.Identity.Resources
                 var result = await handler.Delete(request, cancellationToken);
 
                 result.Id.Should().Be(role.Id.ToString());
+            }
+
+            [Test, Auto]
+            public async Task ShouldReturnTheName(
+                Guid id,
+                CustomResourceRequest<RoleRequest> request,
+                [Frozen] Client.Role role,
+                [Frozen, Substitute] IRolesClient rolesClient,
+                [Target] Handler handler,
+                CancellationToken cancellationToken
+            )
+            {
+                request.PhysicalResourceId = id.ToString();
+
+                var result = await handler.Delete(request, cancellationToken);
+
+                result.Name.Should().Be(role.Name);
             }
         }
     }

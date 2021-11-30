@@ -50,6 +50,7 @@ namespace Brighid.Identity.Resources.Role
             return new OutputData
             {
                 Id = result.Id.ToString(),
+                Name = result.Name,
             };
         }
 
@@ -68,6 +69,7 @@ namespace Brighid.Identity.Resources.Role
             return new OutputData
             {
                 Id = result.Id.ToString(),
+                Name = result.Name,
             };
         }
 
@@ -86,6 +88,7 @@ namespace Brighid.Identity.Resources.Role
             return new OutputData
             {
                 Id = result.Id.ToString(),
+                Name = result.Name,
             };
         }
     }
