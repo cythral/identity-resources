@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cicd", "cicd", "{FD930334-B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cicd.Artifacts", "cicd\Cicd.Artifacts\Cicd.Artifacts.csproj", "{57ACE264-B45A-48F6-A464-2D4572A637D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cicd.BuildDriver", "cicd\cicd.BuildDriver\Cicd.BuildDriver.csproj", "{AE43099E-D1C2-49C0-92E8-9F2BB3430C1E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cicd.BuildDriver", "cicd\Cicd.BuildDriver\Cicd.BuildDriver.csproj", "{AE43099E-D1C2-49C0-92E8-9F2BB3430C1E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cicd.DeployDriver", "cicd\Cicd.DeployDriver\Cicd.DeployDriver.csproj", "{0604866D-F14B-421A-9C0E-A983998A59E5}"
 EndProject
