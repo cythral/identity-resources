@@ -1,0 +1,18 @@
+Tags:
+  Name: Brighid Identity Resources
+  Owner: Cythral
+  Contact:Name: Talen Fisher
+  Contact:Email: talen.fisher@cythral.com
+
+Parameters:
+  IdentityServerUri:
+    Development: http://identity.dev.brigh.id
+    Production: http://identity.brigh.id
+
+  IdentityClientId:
+    Development: 8ac8c1f5-005d-4282-94b4-9ff6ba7cc601
+    Production: 5608353c-02ac-4120-aff8-b46d79f8ac35
+
+  IdentityClientSecret:
+    Development: AQICAHjCPp/4JJqnSjdP1A4JZ+E3yC2Gqmk9GshiMiqu57jujwHkTXjy5En7f2G08lxaACKAAAABEDCCAQwGCSqGSIb3DQEHBqCB/jCB+wIBADCB9QYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAxWxQNS3fI9MVzkxogCARCAgceZHNW3ctLEBhaMNl1pCOBIGfosI3QG3FIO4JbY6cUgIHcrRcnhTYjkq+KZX5hh0edc6rnJ6MB77VGrvDxiPiIfw4NLIrBNngXLwb2JEGepL0lgt5cHPAWU6JeawRa3cbGpsO14NYbTCkOtllosmzCY0yDQ+piV4gxMMnTk0bcxIkpYRuhEvNxL56aUxK0A68D8iW6Xot1NfQ6LmfZ95HhVdsr89+gt3SqdSzaz1nr7lOEDWhxqTC0ZqMZ2JFblaP2qQlxSEUcm
+    Production: AQICAHj/2SUStzyXNMLx0/GX2lnjChwPoR4BUvoYRIybQNwYyQH/2yRSnLo8CvD0G7bl3ODWAAABEDCCAQwGCSqGSIb3DQEHBqCB/jCB+wIBADCB9QYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAwiREED2UWy4PjHW3sCARCAgcc+ue+N98OXTqScon+QCedUf6NlWI7GIM2J5Ic3OW3LhXRHIG3OEL4A3RhR0SRqbOXlwt8uIx3kfRQF1fO3SRyXIU1ch7nD5zPotyIstY3IdcynInIWv32JeFBCtmmykdk+sqbL0AG++NoPQNmnHxkvZujzITxEVt9wcsWlnsrucU5evf9fspYb8tTdurf0NBSOJF8Xaym5/ntQQLVX172Sk9Q0rD84t2ymnDkCXQy0rU/TZHY626P3/g+zdttL+6i1BURfpfad

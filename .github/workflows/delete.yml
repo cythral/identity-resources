@@ -1,0 +1,45 @@
+name: Delete
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: environment
+
+      resources-to-retain:
+        type: string
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: kanga333/variable-mapper@master
+        id: map-environment
+        with:
+          export_to: output
+          key: ${{ github.event.inputs.environment }}
+          map: |
+            {
+              "Development": {
+                "role": "${{ secrets.AWS_DEV_ROLE }}"
+              },
+              "Production": {
+                "role": "${{ secrets.AWS_PROD_ROLE }}"
+              }
+            }
+
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ steps.map-environment.outputs.role }}
+          aws-region: us-east-1
+
+      - name: Delete
+        run: ./cicd/Scripts/delete-stack.sh ${{ github.event.inputs.resources-to-retain }}
