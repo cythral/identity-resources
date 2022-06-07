@@ -4,29 +4,29 @@
     "net6.0": {
       "AWSSDK.CloudFormation": {
         "type": "Direct",
-        "requested": "[3.7.9.19, )",
-        "resolved": "3.7.9.19",
-        "contentHash": "0iTB2AWwF/4l1HUWzmHgPM2yh12pQXluOF3b0N1NQRWmkclOd4edkbYp6sUz7RKZ09oKR0GFcwbQirK3qTfMMA==",
+        "requested": "[3.7.10.3, )",
+        "resolved": "3.7.10.3",
+        "contentHash": "k0qyY7Qv+L93KIVsm7hsXM4u0X+O2jU1DgeJgUClblzj6Nlwsxs29SM08o2/QAcZxYMtzHHicO5To4+YAMzSFg==",
         "dependencies": {
-          "AWSSDK.Core": "[3.7.10.1, 4.0.0)"
+          "AWSSDK.Core": "[3.7.11.10, 4.0.0)"
         }
       },
       "AWSSDK.ECR": {
         "type": "Direct",
-        "requested": "[3.7.4.3, )",
-        "resolved": "3.7.4.3",
-        "contentHash": "nVRLSpx71HexVZ9VbpbWwriAnWE+psgqqb8N6JAhiBjBoS4JCTYUGYG4jg0A2tPmU0dF5yJ3T2o5x1QxYXsLug==",
+        "requested": "[3.7.4.28, )",
+        "resolved": "3.7.4.28",
+        "contentHash": "Xipqq/IHPblPYUTB/p8mlGHRA2ftJOoq/xVHc+PsbherdzLcm3xcgisYjimOn0vRSUrCiVGFNLxYL0UqbqaEow==",
         "dependencies": {
-          "AWSSDK.Core": "[3.7.10.1, 4.0.0)"
+          "AWSSDK.Core": "[3.7.11.10, 4.0.0)"
         }
       },
       "AWSSDK.ECRPublic": {
         "type": "Direct",
-        "requested": "[3.7.0.141, )",
-        "resolved": "3.7.0.141",
-        "contentHash": "e29IBmUn8GGK5dDR/088kDDdKVevBgFyYJodqkx3kBfCvWaPr2hHLEczCAgSxSu/fIn09RQunv5rnc789h2Dmw==",
+        "requested": "[3.7.0.166, )",
+        "resolved": "3.7.0.166",
+        "contentHash": "MyCfsn09FyqpBULhvcng6D93qb8LWyrKCMavzqSS6Hlh5GvdSLVKiJVcoeyBplxg+kjAsRtIPrSxOTzdf9fWHA==",
         "dependencies": {
-          "AWSSDK.Core": "[3.7.10.1, 4.0.0)"
+          "AWSSDK.Core": "[3.7.11.10, 4.0.0)"
         }
       },
       "StyleCop.Analyzers": {
@@ -40,8 +40,8 @@
       },
       "AWSSDK.Core": {
         "type": "Transitive",
-        "resolved": "3.7.10.1",
-        "contentHash": "8dLeCWqy+OKBoHA0AzFH/h3xAo5LpZ7Nxmx47eBF4z9dMeQsYiss3G4Jrgzr2aiDiab03q4wBLaRUTTNpl9AXQ=="
+        "resolved": "3.7.11.10",
+        "contentHash": "u6+/RKeITc7nisUIOmD3peumrKz4L3IoW9hTp8BPqbJ+ElG+lOYj/0TkeIfpPHtjibfVQHkaa10xQXHxYHT2DA=="
       },
       "StyleCop.Analyzers.Unstable": {
         "type": "Transitive",
