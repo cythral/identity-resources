@@ -28,8 +28,10 @@ Resources:
       Handler: Brighid.Identity.Resources.Application::Brighid.Identity.Resources.Application.Handler::Run
       Runtime: provided.al2
       Timeout: 30
-      CodeUri: ../bin/Resources.Application/Release/linux-x64/publish/
+      CodeUri: ../bin/Resources.Application/Release/linux-arm64/publish/
       MemorySize: 512
+      Architectures:
+        - arm64
       Policies:
         - !ImportValue cfn-utilities:SecretsKeyDecryptPolicyArn
       Layers:
@@ -51,8 +53,10 @@ Resources:
       Handler: Brighid.Identity.Resources.Role::Brighid.Identity.Resources.Role.Handler::Run
       Runtime: provided.al2
       Timeout: 30
-      CodeUri: ../bin/Resources.Role/Release/linux-x64/publish/
+      CodeUri: ../bin/Resources.Role/Release/linux-arm64/publish/
       MemorySize: 512
+      Architectures:
+        - arm64
       Policies:
         - !ImportValue cfn-utilities:SecretsKeyDecryptPolicyArn
       Layers:
