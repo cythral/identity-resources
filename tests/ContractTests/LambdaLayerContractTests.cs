@@ -85,7 +85,18 @@ namespace Brighid.Identity.Resources.ContractTests
         {
             var informationVersionAttribute = typeof(ILambda<,>).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()!;
             var version = informationVersionAttribute.InformationalVersion;
-            return version[0..version.IndexOf('+')];
+            var versionParts = version.Split('.');
+            string? prereleaseTag = null;
+
+            if (version.Contains('-'))
+            {
+                var versionWithoutPrereleaseTag = version[0..version.IndexOf('-')];
+                prereleaseTag = version[(version.IndexOf('-') + 1)..version.IndexOf('+')];
+                versionParts = versionWithoutPrereleaseTag.Split('.');
+            }
+
+            var fixedVersion = $"{versionParts[0]}.{versionParts[1]}.{versionParts[2]}";
+            return prereleaseTag == null ? fixedVersion : $"{fixedVersion}-{prereleaseTag}";
         }
 
         public static string GetDotnetSdkVersion()
