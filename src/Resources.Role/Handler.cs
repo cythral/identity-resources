@@ -63,7 +63,7 @@ namespace Brighid.Identity.Resources.Role
         public async Task<OutputData> Update(CustomResourceRequest<RoleRequest> request, CancellationToken cancellationToken = default)
         {
             logger.LogInformation("Received update role request: {@request}", JsonSerializer.Serialize(request));
-            var result = await rolesClient.Put(Guid.Parse(request.PhysicalResourceId), request.ResourceProperties, cancellationToken);
+            var result = await rolesClient.Put(Guid.Parse(request.PhysicalResourceId!), request.ResourceProperties, cancellationToken);
             logger.LogInformation("Received update role response: {@response}", JsonSerializer.Serialize(result));
 
             return new OutputData
@@ -82,7 +82,7 @@ namespace Brighid.Identity.Resources.Role
         public async Task<OutputData> Delete(CustomResourceRequest<RoleRequest> request, CancellationToken cancellationToken = default)
         {
             logger.LogInformation("Received delete role request: {@request}", JsonSerializer.Serialize(request));
-            var result = await rolesClient.Delete(Guid.Parse(request.PhysicalResourceId), cancellationToken);
+            var result = await rolesClient.Delete(Guid.Parse(request.PhysicalResourceId!), cancellationToken);
             logger.LogInformation("Received delete role response: {@response}", JsonSerializer.Serialize(result));
 
             return new OutputData

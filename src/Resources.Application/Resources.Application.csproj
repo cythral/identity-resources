@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
+        <RuntimeIdentifier>linux-arm64</RuntimeIdentifier>
         <SelfContained>false</SelfContained>
         <PublishReadyToRun>true</PublishReadyToRun>
         <NoWarn>CS8073</NoWarn>
@@ -9,10 +9,10 @@
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Brighid.Identity.Client" Version="0.6.1" />
-        <PackageReference Include="Lambdajection" Version="0.9.0-beta5" />
-        <PackageReference Include="Lambdajection.CustomResource" Version="0.9.0-beta5" />
-        <PackageReference Include="Lambdajection.Encryption" Version="0.9.0-beta5" />
-        <PackageReference Include="Lambdajection.Layer" Version="0.9.0-beta5" />
-        <PackageReference Include="Lambdajection.Runtime" Version="0.9.0-beta5" />
+        <PackageReference Include="Lambdajection" Version="0.10.0-beta1" />
+        <PackageReference Include="Lambdajection.CustomResource" Version="0.10.0-beta1" />
+        <PackageReference Include="Lambdajection.Encryption" Version="0.10.0-beta1" />
+        <PackageReference Include="Lambdajection.Layer" Version="0.10.0-beta1" />
+        <PackageReference Include="Lambdajection.Runtime" Version="0.10.0-beta1" />
     </ItemGroup>
 </Project>
