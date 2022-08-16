@@ -1530,11 +1530,11 @@
         "type": "Project",
         "dependencies": {
           "Brighid.Identity.Client": "0.6.1",
-          "Lambdajection": "0.9.0-beta5",
-          "Lambdajection.CustomResource": "0.9.0-beta5",
-          "Lambdajection.Encryption": "0.9.0-beta5",
-          "Lambdajection.Layer": "0.9.0-beta5",
-          "Lambdajection.Runtime": "0.9.0-beta5"
+          "Lambdajection": "0.10.0-beta1",
+          "Lambdajection.CustomResource": "0.10.0-beta1",
+          "Lambdajection.Encryption": "0.10.0-beta1",
+          "Lambdajection.Layer": "0.10.0-beta1",
+          "Lambdajection.Runtime": "0.10.0-beta1"
         }
       },
       "Brighid.Identity.Resources.Role": {

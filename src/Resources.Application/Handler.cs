@@ -52,7 +52,7 @@ namespace Brighid.Identity.Resources.Application
         /// <returns>The resulting command data.</returns>
         public async Task<OutputData> Update(CustomResourceRequest<ApplicationRequest> request, CancellationToken cancellationToken = default)
         {
-            var result = await applicationsClient.UpdateById(Guid.Parse(request.PhysicalResourceId), request.ResourceProperties, cancellationToken);
+            var result = await applicationsClient.UpdateById(Guid.Parse(request.PhysicalResourceId!), request.ResourceProperties, cancellationToken);
             return new OutputData
             {
                 Id = result.Id.ToString(),
@@ -68,7 +68,7 @@ namespace Brighid.Identity.Resources.Application
         /// <returns>The resulting command data.</returns>
         public async Task<OutputData> Delete(CustomResourceRequest<ApplicationRequest> request, CancellationToken cancellationToken = default)
         {
-            var result = await applicationsClient.DeleteById(Guid.Parse(request.PhysicalResourceId), cancellationToken);
+            var result = await applicationsClient.DeleteById(Guid.Parse(request.PhysicalResourceId!), cancellationToken);
             return new OutputData
             {
                 Id = result.Id.ToString(),
