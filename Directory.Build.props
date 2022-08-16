@@ -11,6 +11,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Configuration Condition="$(Configuration) == ''">Debug</Configuration>
+    <RuntimeIdentifier>linux-arm64</RuntimeIdentifier>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Nullable>enable</Nullable>
     <LangVersion>9.0</LangVersion>
